@@ -1,0 +1,161 @@
+body {
+  background-color: #424242;
+  color: #eff5fb;
+  font-family: 'Rajdhani Regular', sans-serif;
+  font-size: large;
+  font-weight: 100;
+  line-height: 1.8em;
+  margin: 10px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Rajdhani Bold', sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+nav {
+  top: 50px;
+  left: 50%;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  color: #fff;
+  background-color: #a901db;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.1em 2em;
+  text-transform: uppercase;
+}
+
+nav ul li a:hover {
+  color: #a901db;
+  background-color: #fff;
+}
+
+nav ul {
+  padding: 0px;
+  text-align: center;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 0px;
+}
+
+header p {
+  color: #a9bcf5;
+  font-family: 'LiuJian Regular';
+  font-size: larger;
+  font-style: italic;
+  margin-top: 0px;
+}
+
+header p q {
+  border-bottom-style: solid;
+  border-bottom-width: medium;
+  border-bottom-color: #a9bcf5;
+  padding-bottom: 0.2em;
+}
+
+figure {
+  float: left;
+  margin-top: 0px;
+  margin-right: 20px;
+  width: 400px;
+}
+
+figure img {
+  width: 400px;
+  height: 250px;
+}
+
+figure figcaption {
+  text-align: center
+}
+
+main section p {
+  text-align: justify;
+}
+
+main section p {
+  text-indent: 2.5em;
+}
+
+main section#cargos {
+  clear: left;
+}
+
+aside table {
+  border-style: solid;
+  border-width: medium;
+  border-color: #eff5fb;
+  border-collapse: collapse;
+  caption-side: bottom;
+}
+
+aside table thead th {
+  background-color: #a9bcf5;
+  color: #eff5fb;
+  font-weight: bold;
+  padding: 0px 50px;
+  text-align: center;
+}
+
+aside table tfoot td {
+  font-weight: bold;
+}
+
+aside table td {
+  padding-right: 10px;
+  text-align: right;
+}
+
+aside table td:first-child {
+  padding-left: 10px;
+  text-align: left;
+}
+
+aside table thead th,
+aside table tbody td,
+aside table tfoot td {
+  border-style: solid;
+  border-width: medium;
+  border-color: #eff5fb;
+}
+
+section form label {
+  display: inline-block;
+  vertical-align: top;
+  width: 6em;
+}
+
+a {
+  color: #a9bcf5;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ced8f6;
+}

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>JQuery - Formatação</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+  <script src="./main.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <header>
+    <h1>JQuery - Formatação</h1>
+    <p>Aprendendo formatar elementos utilizando a biblioteca JQuery</p>
+  </header>
+
+  <main class="container-fluid">
+    <section id="sessao-01">
+      <header>
+        <h2>Dimensões</h2>
+      </header>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Método</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>width()</td>
+            <td>Recupera a largura do elemento em pixels (somente conteúdo)</td>
+          </tr>
+          <tr>
+            <td>width(valor)</td>
+            <td>Define a largura do elemento (somente conteúdo)</td>
+          </tr>
+          <tr>
+            <td>innerWidth()</td>
+            <td>Recupera a largura do elemento (conteúdo e padding)</td>
+          </tr>
+          <tr>
+            <td>innerWidth(valor)</td>
+            <td>Define a largura do elemento (conteúdo e padding)</td>
+          </tr>
+          <tr>
+            <td>outerWidth(true)</td>
+            <td>Recupera a largura do elemento (conteúdo, padding e borda). Se o parâmetro margem for true, então inclui a margem externa também</td>
+          </tr>
+          <tr>
+            <td>outerWidth(valor)</td>
+            <td>Define a largura do elemento (conteúdo, padding e borda)</td>
+          </tr>
+          <tr>
+            <td>height()</td>
+            <td>Recupera a altura do elemento em pixels (somente conteúdo)</td>
+          </tr>
+          <tr>
+            <td>height(valor)</td>
+            <td>Define a altura do elemento (somente conteúdo)</td>
+          </tr>
+          <tr>
+            <td>innerHeight()</td>
+            <td>Recupera a altura do elemento (conteúdo e padding)</td>
+          </tr>
+          <tr>
+            <td>innerHeight(valor)</td>
+            <td>Define a altura do elemento (conteúdo e padding)</td>
+          </tr>
+          <tr>
+            <td>outerHeight(true)</td>
+            <td>Recupera a altura do elemento (conteúdo, padding e borda). Se o parâmetro margem for true, então inclui a margem externa também</td>
+          </tr>
+          <tr>
+            <td>outerHeight(valor)</td>
+            <td>Define a altura do elemento (conteúdo, padding e borda).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button type="button" class="btn btn-primary">
+        Clique Aqui
+      </button>
+    </section>
+
+    <section id="sessao-02">
+      <header>
+        <h2>Posição</h2>
+      </header>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Método</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>position()</td>
+            <td>Retorna as distâncias esquerda (left) e superior (top) do canto esquerdo superior do elemento pai</td>
+          </tr>
+          <tr>
+            <td>offset()</td>
+            <td>Retorna as distâncias esquerda (left) e superior (top) do canto esquerdo superior do documento</td>
+          </tr>
+          <tr>
+            <td>scrollLeft()</td>
+            <td>Retorna a posição da barra de rolagem horizontal do elemento</td>
+          </tr>
+          <tr>
+            <td>scrollTop()</td>
+            <td>Retorna a posição da barra de rolagem vertical</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Meu parágrafo!</p>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">Resultados</div>
+        <div class="panel-body"></div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>JQuery - Eventos</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+  <script src="./main.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <style>
+    div#box1 {
+      background-color: chartreuse;
+      padding: 15px;
+    }
+
+    div#box2 {
+      background-color: crimson;
+      color: white;
+      margin: 15px auto;
+      width: 250px;
+      height: 250px;
+    }
+
+    form {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>JQuery - Eventos</h1>
+    <p>Aprendendo manipular eventos utilizando a biblioteca JQuery</p>
+  </header>
+
+  <main class="container-fluid">
+    <section>
+      <header>
+        <h2>Propriedades dos Eventos</h2>
+      </header>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Propriedade</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>type</td>
+            <td>Tipo do evento</td>
+          </tr>
+          <tr>
+            <td>target</td>
+            <td>Elemento registrado para o evento</td>
+          </tr>
+          <tr>
+            <td>result</td>
+            <td>O valor retornado pelo manipulador do evento</td>
+          </tr>
+          <tr>
+            <td>data</td>
+            <td>Dados opcionais passados pelo método do evento</td>
+          </tr>
+          <tr>
+            <td>pageX</td>
+            <td>Indica a coordenada X do mouse</td>
+          </tr>
+          <tr>
+            <td>pageY</td>
+            <td>Indica a coordenada Y do mouse</td>
+          </tr>
+          <tr>
+            <td>preventDefault()</td>
+            <td>Impede que o comportamento padrão seja executado</td>
+          </tr>
+          <tr>
+            <td>stopPropagation()</td>
+            <td>Evita que elementos ancestrais executem o evento</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    
+    <section id="sessao-01">
+      <header>
+        <h2>Eventos de Clique do Mouse</h2>
+      </header>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Evento</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>click()</td>
+            <td>Clique do mouse sobre o elemento</td>
+          </tr>
+          <tr>
+            <td>dbclick()</td>
+            <td>Duplo clique do mouse sobre o elemento</td>
+          </tr>
+          <tr>
+            <td>contextmenu()</td>
+            <td>Clique com o botão direito do mouse</td>
+          </tr>
+          <tr>
+            <td>mousedown()</td>
+            <td>Botão do mouse é pressionado sobre o elemento (utilizado quando se arrasta um elemento)</td>
+          </tr>
+          <tr>
+            <td>mouseup()</td>
+            <td>Botão do mouse é solto sobre o elemento (utilizado quando se arrasta um elemento)</td>
+          </tr>
+          <tr>
+            <td>mouseover()</td>
+            <td>Cursor do mouse entra na área do elemento, excluindo a área dos descendentes</td>
+          </tr>
+          <tr>
+            <td>mouseenter()</td>
+            <td>Cursor do mouse entra na área do elemento, incluindo a área dos descendentes (regresso do internet
+              explorer)</td>
+          </tr>
+          <tr>
+            <td>mouseout()</td>
+            <td>Cursor do mouse sai da área do elemento, inclusive quando indo para a área dos descendentes</td>
+          </tr>
+          <tr>
+            <td>mouseleave()</td>
+            <td>Cursor do mouse sai da área do elemento, independentemente da área dos descendentes (regresso do
+              internet explorer)</td>
+          </tr>
+          <tr>
+            <td>mousemove()</td>
+            <td>Cursor do mouse se move sobre o elemento</td>
+          </tr>
+          <tr>
+            <td>hover(fn1, fn2)</td>
+            <td>Combinação dos eventos mouseenter() e mouseleave()</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div id="box1">
+            <div id="box2">
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <button class="btn btn-sm btn-default">
+                <span class="glyphicon glyphicon-erase"></span>
+              </button>
+              Resultado
+            </div>
+            <div class="panel-body"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessao-02">
+      <header>
+        <h2>Eventos do Teclado</h2>
+      </header>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Evento</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>keypress()</td>
+            <td>Tecla do teclado foi pressionada e solta com o elemento em foco</td>
+          </tr>
+          <tr>
+            <td>keydown()</td>
+            <td>Tecla do teclado foi pressionada com o elemento em foco (inclui teclas como shift, esc e control)</td>
+          </tr>
+          <tr>
+            <td>keyup()</td>
+            <td>Tecla do teclado foi solta com o elemento em foco</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <div class="input-group">
+              <label for="nome">Nome</label>
+              <input type="text" name="nome" id="nome" class="form-control">
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <button class="btn btn-sm btn-default">
+                <span class="glyphicon glyphicon-erase"></span>
+              </button>
+              Resultado
+            </div>
+            <div class="panel-body"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessao-03">
+      <header>
+        <h2>Eventos do Formulário</h2>
+      </header>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Evento</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>focus()</td>
+            <td>O campo do formulário (ou link) recebeu o foco</td>
+          </tr>
+          <tr>
+            <td>blur()</td>
+            <td>O campo do formulário (ou link) perdeu o foco</td>
+          </tr>
+          <tr>
+            <td>focusin()</td>
+            <td>O elemento ou algum descendente dele recebeu foco</td>
+          </tr>
+          <tr>
+            <td>focusout()</td>
+            <td>O elemento ou algum descendente dele perdeu o foco</td>
+          </tr>
+          <tr>
+            <td>change()</td>
+            <td>O valor do campo input, textarea ou select foi alterado</td>
+          </tr>
+          <tr>
+            <td>select()</td>
+            <td>O usuário fez alguma seleção de texto em um campo input do tipo texto ou em um campo textarea</td>
+          </tr>
+          <tr>
+            <td>submit()</td>
+            <td>O usuário tentou enviar o formulário</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <div class="input-group">
+              <label for="email">E-mail</label>
+              <input type="email" name="email" id="email" class="form-control">
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <button class="btn btn-sm btn-default">
+                <span class="glyphicon glyphicon-erase"></span>
+              </button>
+              Resultado
+            </div>
+            <div class="panel-body"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessao-04">
+      <header>
+        <h2>Eventos de Janela (window)</h2>
+      </header>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Evento</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>resize()</td>
+            <td>A janela do navegador foi redimensionada</td>
+          </tr>
+          <tr>
+            <td>scroll()</td>
+            <td>A janela do navegador ou algum elemento com a propriedade overflow definida para scroll, foi rolada</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="row">
+        <div class="col-md-6">
+          
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <button class="btn btn-sm btn-default">
+                <span class="glyphicon glyphicon-erase"></span>
+              </button>
+              Resultado
+            </div>
+            <div class="panel-body"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessao-05">
+      <header>
+        <h2>Eventos do Documento (document)</h2>
+      </header>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Evento</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>load()</td>
+            <td>O documento HTML (ou outro recurso específico) foi carregado</td>
+          </tr>
+          <tr>
+            <td>ready()</td>
+            <td>Toda a página foi carregada (HTML e recursos)</td>
+          </tr>
+          <tr>
+            <td>unload()</td>
+            <td>O usuário saiu da página (navegando outro página ou, em alguns navegadores, fechando a janela)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="sessao-06">
+      <header>
+        <h2>Eventos do Documento (document)</h2>
+      </header>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Evento</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>on(evento, função)</td>
+            <td>Define um manipulador de eventos</td>
+          </tr>
+          <tr>
+            <td>off(evento)</td>
+            <td>Cancela o manipulador de eventos</td>
+          </tr>
+          <tr>
+            <td>one(evento, função)</td>
+            <td>Define o manipulador de evento para uma única execução</td>
+          </tr>
+          <tr>
+            <td>trigger(evento)</td>
+            <td>Dispara um evento</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <div class="input-group">
+              <label for="mensagem">Mensagem</label>
+              <input type="text" name="mensagem" id="mensagem" class="form-control">
+            </div>
+          </form>
+
+          <p id="paragrafo">
+            Meu parágrafo!
+          </p>
+
+          <p>
+            <button type="button" class="btn btn-primary">
+              Clique
+            </button>
+          </p>
+
+          <p>
+            <button type="button" class="btn btn-default">
+              Evento Próprio
+            </button>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <button class="btn btn-sm btn-default">
+                <span class="glyphicon glyphicon-erase"></span>
+              </button>
+              Resultado
+            </div>
+            <div class="panel-body"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

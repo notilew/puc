@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>JQuery - Filtros e Processamento</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="./main.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <style>
+    form {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>JQuery - Filtros e Processamento</h1>
+    <p>Aprendendo a filtrar e processar elementos selecionados pelo seletor $(), utilizando a biblioteca JQuery</p>
+  </header>
+
+  <main class="container-fluid">
+    <section id="sessao-01">
+      <div class="row">
+        <div class="col-md-6">
+          <header>
+            <h2>Filtros de Conteúdo</h2>
+          </header>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Filtro</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>filter()</td>
+                <td>Reduz o conjunto para aqueles que atendem a um seletor ou passem em uma função de teste</td>
+              </tr>
+              <tr>
+                <td>is()</td>
+                <td>Testa se pelo menos um objeto atende ao seletor e, nesse caso, retorna verdadeiro. Não retorna outro conjunto</td>
+              </tr>
+              <tr>
+                <td>not()</td>
+                <td>Elimina do conjunto os elementos que se enquadrem no segundo seletor</td>
+              </tr>
+              <tr>
+                <td>has()</td>
+                <td>Reduz o conjunto àquele elementos que possuam um determinado descendente</td>
+              </tr>
+              <tr>
+                <td>map()</td>
+                <td>Transforma o conjunto em um outro objeto contendo novos valores</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-md-6">
+          <header>
+            <h2>JQuery - Testes</h2>
+          </header>
+
+          <p id="p1" class="paragrafos">Meu primeiro parágrafo!</p>
+          <p id="p2" class="paragrafos">Meu <strong>segundo</strong> parágrafo!</p>
+          <p id="p3" class="paragrafos">Meu terceiro parágrafo!</p>
+          <p id="p4" class="paragrafos">Meu quarto parágrafo!</p>
+          <p id="p5" class="paragrafos">Meu quinto parágrafo!</p>
+          <p id="p6" class="paragrafos">Meu sexto parágrafo!</p>
+
+          <form>
+            <div class="input-group">
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" class="form-control" placeholder="Adriane Esteves">
+            </div>
+          </form>
+
+          <p>
+            <button type="button" id="btn01" class="btn btn-primary">
+              Clique Aqui
+            </button>
+          </p>
+
+          <div class="panel panel-primary">
+            <div class="panel-heading">Resultados</div>
+            <div class="panel-body"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessao-02">
+      <div class="row">
+        <div class="col-md-6">
+          <header>
+            <h2>Filtros de Posição</h2>
+          </header>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Filtro</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>eq()</td>
+                <td>Reduz o conjunto para apenas um elemento do índice especificado</td>
+              </tr>
+              <tr>
+                <td>first()</td>
+                <td>Reduz o conjunto ao seu primeiro elemento</td>
+              </tr>
+              <tr>
+                <td>last()</td>
+                <td>Reduz o conjunto ao seu último elemento</td>
+              </tr>
+              <tr>
+                <td>slice()</td>
+                <td>Reduz o conjunto a um subconjunto especificado por uma faixa de índices</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-md-6">
+          <header>
+            <h2>JQuery - Testes</h2>
+          </header>
+
+          <p id="p7" class="paragrafos">Meu sétimo parágrafo!</p>
+          <p id="p8" class="paragrafos">Meu <strong>oitavo</strong> parágrafo!</p>
+          <p id="p9" class="paragrafos">Meu nono parágrafo!</p>
+          <p id="p10" class="paragrafos">Meu décimo parágrafo!</p>
+          <p id="p11" class="paragrafos">Meu décimo primeiro parágrafo!</p>
+          <p id="p12" class="paragrafos">Meu décimo segundo parágrafo!</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessao-03">
+      <div class="row">
+        <div class="col-md-6">
+          <header>
+            <h2>Filtros de Hierarquia</h2>
+          </header>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Filtro</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>parent()</td>
+                <td>Retorna os pais de cada elemento selecionado</td>
+              </tr>
+              <tr>
+                <td>parents()</td>
+                <td>Retorna todos os ancestrais de cada elemento</td>
+              </tr>
+              <tr>
+                <td>parentsUntil()</td>
+                <td>Retorna os ancestrais de um elemento até que o elemento especificado seja encontrado (esse próprio elemento não é incluído na resposta)</td>
+              </tr>
+              <tr>
+                <td>closest()</td>
+                <td>Para cada elemento do conjunto, encontra um ancestral que atenda ao seletor (o próprio elemento pode ser retornado se possível)</td>
+              </tr>
+              <tr>
+                <td>offsetParent()</td>
+                <td>Retorna o ancestral mais próximo que tenha sido reposicionado no fluxo do documento (por meio da propriedade position da CSS)</td>
+              </tr>
+              <tr>
+                <td>children()</td>
+                <td>Retorna os filhos de cada elemento, opcionalmente filtrados por um seletor</td>
+              </tr>
+              <tr>
+                <td>find()</td>
+                <td>Retorna os descendentes de cada elemento que atendam a um seletor. É semelhante ao children(), mas o children() retorna apenas os filhos imediatos</td>
+              </tr>
+              <tr>
+                <td>siblings()</td>
+                <td>Retorna os irmãos de cada elemento, opcionalmente filtrados por um seletor</td>
+              </tr>
+              <tr>
+                <td>next()</td>
+                <td>Retorna o próximo irmão (ou o próximo irmão que atenda a um seletor, se específicado)</td>
+              </tr>
+              <tr>
+                <td>nextAll()</td>
+                <td>Retorna os próximos irmãos, opcionalmente filtrados por um seletor</td>
+              </tr>
+              <tr>
+                <td>nextUntil()</td>
+                <td>Retorna os próximos irmãos, até que um atenda ao seletor (esse elemento não será incluído)</td>
+              </tr>
+              <tr>
+                <td>prev()</td>
+                <td>Retorna o irmão imediatamente anterior</td>
+              </tr>
+              <tr>
+                <td>prevAll()</td>
+                <td>Retorna os irmãos anteriores</td>
+              </tr>
+              <tr>
+                <td>prevUntil()</td>
+                <td>Retorna os irmãos anteriores, até que um atenda ao seletor (esse elemento não será incluído)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-md-6">
+          <header>
+            <h2>JQuery - Testes</h2>
+          </header>
+
+          <div id="primeira-divisao">
+            <p>Meu parágrafo!</p>
+            <p>Meu parágrafo!</p>
+            <p>Meu parágrafo!</p>
+          </div>
+
+          <div id="segunda-divisao">
+            <p>Meu parágrafo!</p>
+            <p>Meu parágrafo!</p>
+            <p>Meu parágrafo!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessao-04">
+      <div class="row">
+        <div class="col-md-6">
+          <header>
+            <h2>Outros Filtros</h2>
+          </header>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Filtro</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>add()</td>
+                <td>Adiciona os elementos especificados pelo seletor ao conjunto atual</td>
+              </tr>
+              <tr>
+                <td>addBack()</td>
+                <td>Adiciona os últimos elementos filtrados ao conjunto original de elementos</td>
+              </tr>
+              <tr>
+                <td>contents()</td>
+                <td>Retorna todos os filhos, incluindo os nodos texto e de comentário</td>
+              </tr>
+              <tr>
+                <td>end()</td>
+                <td>Encerra a operação de filtragem e retorna ao conjunto anterior de elementos</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <header>
+            <h2>JQuery - Testes</h2>
+          </header>
+
+          <h3>Título 3</h3>
+          <h4>Título 4</h4>
+
+          <div id="terceira-divisao">
+            <p>Meu parágrafo!</p>
+            <p>Meu parágrafo!</p>
+            <p>Meu parágrafo!</p>
+          </div>
+
+          <div id="quarta-divisao">
+            <p>Meu parágrafo!</p>
+            <p>Meu parágrafo!</p>
+            <p>Meu parágrafo!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessao-05">
+      <div class="row">
+        <div class="col-md-6">
+          <header>
+            <h2>Coleções</h2>
+          </header>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Método</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>get()</td>
+                <td>Retorna um vetor com os elementos selecionados ou apenas um se um índice for especificado</td>
+              </tr>
+              <tr>
+                <td>index()</td>
+                <td>Retorna a posição do primeiro elemento do conjunto em relação a seus irmãos no documento. Se um seletor for passado, então o valor de retorno será a posição desse elemento no primeiro conjunto resposta</td>
+              </tr>
+              <tr>
+                <td>toArray()</td>
+                <td>Retorna um vetor com os elementos selecionados</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <header>
+            <h2>JQuery - Testes</h2>
+          </header>
+          
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

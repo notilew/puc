@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>JQuery - Manipulação do Documento</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="./main.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <style>
+    form {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>JQuery - Manipulação do Documento</h1>
+    <p>Aprendendo a manipular o documento utilizando a biblioteca JQuery</p>
+  </header>
+
+  <main class="container-fluid">
+    <section id="sessao-01">
+      <div class="row">
+        <div class="col-md-6">
+          <header>
+            <h2>Manipuladores de Conteúdo</h2>
+          </header>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Manipulador</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>.html()</td>
+                <td>Recupera o conteúdo HTML de um elemento</td>
+              </tr>
+              <tr>
+                <td>.html(valor)</td>
+                <td>Define o conteúdo HTML de um elemento</td>
+              </tr>
+              <tr>
+                <td>.text()</td>
+                <td>Recupera o conteúdo textual de um elemento</td>
+              </tr>
+              <tr>
+                <td>.text(valor)</td>
+                <td>Define o conteúdo textual de um elemento</td>
+              </tr>
+              <tr>
+                <td>.val()</td>
+                <td>Recupera o valor do campo de formulário</td>
+              </tr>
+              <tr>
+                <td>.val(valor)</td>
+                <td>Define o valor do campo de formulário</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-md-6">
+          <header>
+            <h2 class="text-center">JQuery - Testes</h2>
+          </header>
+
+          <p id="p1">Meu <strong>primeiro</strong> parágrafo</p>
+          <p id="p2">Meu <strong>segundo</strong> parágrafo</p>
+          <p id="p3">Meu <strong>terceiro</strong> parágrafo</p>
+          <p id="p4">Meu <strong>quarto</strong> parágrafo</p>
+          <p id="p5">Meu <strong>quinto</strong> parágrafo</p>
+
+          <form>
+            <div class="input-group">
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" class="form-control" placeholder="Adriane Esteves">
+            </div>
+          </form>
+
+          <p>
+            <button type="button" id="btn01" class="btn btn-primary">
+              Clique Aqui
+            </button>
+          </p>
+
+          <div class="panel panel-primary">
+            <div class="panel-heading">Painel de Resultados</div>
+            <div class="panel-body"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessao-02">
+      <div class="row">
+        <div class="col-md-6">
+          <header>
+            <h2>Manipuladores de Inserções</h2>
+          </header>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Manipulador</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>$(str)</td>
+                <td>Novo elemento</td>
+              </tr>
+              <tr>
+                <td>prepend()</td>
+                <td>Insere conteúdo como o primeiro filho do elemento</td>
+              </tr>
+              <tr>
+                <td>append()</td>
+                <td>Insere conteúdo como o último filho do elemento</td>
+              </tr>
+              <tr>
+                <td>before()</td>
+                <td>Insere conteúdo antes do elemento (como irmão)</td>
+              </tr>
+              <tr>
+                <td>after()</td>
+                <td>Insere conteúdo após o elemento (como irmão)</td>
+              </tr>
+              <tr>
+                <td>prependTo</td>
+                <td>Insere conteúdo como o primeiro filho do elemento indicado</td>
+              </tr>
+              <tr>
+                <td>appendTo</td>
+                <td>Insere conteúdo como o último filho do elemento indicado</td>
+              </tr>
+              <tr>
+                <td>insertBefore()</td>
+                <td>Insere conteúdo antes do elemento indicado (como irmão)</td>
+              </tr>
+              <tr>
+                <td>insertAfter()</td>
+                <td>Insere conteúdo após o elemento indicado (como irmão)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-md-6">
+          <header>
+            <h2 class="text-center">JQuery - Testes</h2>
+          </header>
+
+          <p>
+            <button type="button" id="btn02" class="btn btn-primary">
+              Clique Aqui
+            </button>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessao-03">
+      <div class="row">
+        <div class="col-md-6">
+          <header>
+            <h2>Manipuladores de Atributos</h2>
+          </header>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Manipulador</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>attr(atributo)</td>
+                <td>Recupera um atributo de um elemento</td>
+              </tr>
+              <tr>
+                <td>attr(atributo, valor)</td>
+                <td>Define o valor de um atributo de um elemento</td>
+              </tr>
+              <tr>
+                <td>attr(objeto)</td>
+                <td>Define os valores dos atributos de um elemento por meio de um objeto</td>
+              </tr>
+              <tr>
+                <td>prop(propriedade)</td>
+                <td>Recupera uma propriedade de um elemento</td>
+              </tr>
+              <tr>
+                <td>prop(propriedade, valor)</td>
+                <td>Define o valor de uma propriedade de um elemento</td>
+              </tr>
+              <tr>
+                <td>prop(objeto)</td>
+                <td>Define os valores das propriedades de um elemento por meio de um objeto</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="alert alert-warning">
+            <strong>Observação</strong>: O manipulador <strong>attr()</strong> faz referência ao valor da página (valor original após a requisição da página), já o manipulador <strong>prop()</strong> faz referência ao objeto (document) gerado após a interpretação da página pelo navegador e pode sofres alterações do usuário.
+          </p>
+        </div>
+
+        <div class="col-md-6">
+          <header>
+            <h2>JQuery - Testes</h2>
+          </header>
+
+          <p id="imagem" class="text-center"></p>
+
+          <form>
+            <div class="input-group">
+              <label for="email">E-mail:</label>
+              <input type="text" id="email" class="form-control" value="adriana-esteves@outlook.com">
+            </div>
+          </form>
+
+          <div class="panel panel-primary">
+            <div class="panel-heading">Painel de Resultados</div>
+            <div class="panel-body"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessao-04">
+      <div class="row">
+        <div class="col-md-6">
+          <header>
+            <h2>Manipuladores de Exclusão</h2>
+          </header>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Manipulador</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>remove()</td>
+                <td>Remove o elemento selecionado</td>
+              </tr>
+              <tr>
+                <td>empty()</td>
+                <td>Remove o conteúdo do elemento selecionado, inclusive os elementos filhos</td>
+              </tr>
+              <tr>
+                <td>removeAttr()</td>
+                <td>Remove um atributo do elemento selecionado</td>
+              </tr>
+              <tr>
+                <td>removeProp()</td>
+                <td>Remove uma propriedade do elemento selecionado</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-md-6">
+          <header>
+            <h2>JQuery - Testes</h2>
+          </header>
+
+          <p id="p6" class="paragrafos">Meu <strong>sexto</strong> parágrafo</p>
+          <p id="p7" class="paragrafos">Meu <strong>sétimo</strong> parágrafo</p>
+          <p id="p8" class="paragrafos">Meu <strong>oitavo</strong> parágrafo</p>
+          <p id="p9" class="paragrafos">Meu <strong>nono</strong> parágrafo</p>
+          <p id="p10" class="paragrafos">Meu <strong>décimo</strong> parágrafo</p>
+
+          <p>
+            <button type="button" id="btn02" class="btn btn-primary">
+              Clique Aqui
+            </button>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessao-05">
+      <div class="row">
+        <div class="col-md-6">
+          <header>
+            <h2>Manipuladores de Substituição</h2>
+          </header>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Manipulador</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>replaceWith(conteúdo)</td>
+                <td>Susbtitui o conteúdo dos elementos selecionados pelo conteúdo passado como parâmetro</td>
+              </tr>
+              <tr>
+                <td>replaceAll(E)</td>
+                <td>Aplica o conteúdo do elemento selecionado a todos que satisfizerem o seletor E</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-md-6">
+          <header>
+            <h2>JQuery - Testes</h2>
+          </header>
+
+          <p id="p11" class="paragrafos">Meu <strong>décimo primeiro</strong> parágrafo</p>
+          <p id="p12" class="paragrafos">Meu <strong>décimo segundo</strong> parágrafo</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessao-06">
+      <div class="row">
+        <div class="col-md-6">
+          <header>
+            <h2>Manipulação de Empacotamento</h2>
+          </header>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Manipulador</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>wrap(E)</td>
+                <td>Cria um elemento pai E para cada elemento que satifaz o seletor</td>
+              </tr>
+              <tr>
+                <td>wrapAll(E)</td>
+                <td>Cria um elemento pai E para o conjunto de elementos que satisfazem o seletor. Se eles estiverem separados, então serão movidos dentro do documento para ficarem agrupados (junto com o primeiro)</td>
+              </tr>
+              <tr>
+                <td>wrapInner(E)</td>
+                <td>Envolve o conteúdo de cada elemento que satisfaça ao seletor usando o elemento E</td>
+              </tr>
+              <tr>
+                <td>unwrap()</td>
+                <td>Remove o elemento pai, mantendo os elementos selecionados em seus lugares</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-md-6">
+          <header>
+            <h2>JQuery - Testes</h2>
+          </header>
+
+          <p id="p13" class="paragrafos06">Meu <strong>décimo terceiro</strong> parágrafo</p>
+          <p id="p14" class="paragrafos06">Meu <strong>décimo quarto</strong> parágrafo</p>
+          <p id="p15" class="paragrafos06">Meu <strong>décimo quinto</strong> parágrafo</p>
+          <p id="p16" class="paragrafos06">Meu <strong>décimo sexto</strong> parágrafo</p>
+
+          <p data-css="painel">Lorem Ipsum</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessao-07">
+      <div class="row">
+        <div class="col-md-6">
+          <header>
+            <h2>Manipuladores de Classes</h2>
+          </header>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Manipulador</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>addClass()</td>
+                <td>Adiciona uma classe ao elemento</td>
+              </tr>
+              <tr>
+                <td>hasClass()</td>
+                <td>Testa se o elemento possui uma determinada classe</td>
+              </tr>
+              <tr>
+                <td>removeClass()</td>
+                <td>Remove uma classe do elemento</td>
+              </tr>
+              <tr>
+                <td>toggleClass()</td>
+                <td>Adiciona a classe se o elemento não a tiver ou retira a classe se o elemento já a tiver</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-md-6">
+          <header>
+            <h2>JQuery - Testes</h2>
+          </header>
+          
+          <p id="paragrafo">Meu parágrafo</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

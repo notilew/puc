@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>JQuery - Seletores - Parte 02</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="./main.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <header>
+    <h1>JQuery - Seletores - Parte 02</h1>
+    <p>Aprendendo a selecionar elementos HTML utilizando a biblioteca JQuery</p>
+  </header>
+
+  <main class="container-fluid">
+    <section id="sessao-01">
+      <header>
+        <h2>Seletores de Formulário</h2>
+      </header>
+
+      <div class="row">
+        <div class="col-md-6">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Seletor</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>:input</td>
+                <td>Seleciona todos os campos de formulário</td>
+              </tr>
+              <tr>
+                <td>:text</td>
+                <td>Seleciona os campos do tipo text</td>
+              </tr>
+              <tr>
+                <td>:password</td>
+                <td>Seleciona os campos do tipo password</td>
+              </tr>
+              <tr>
+                <td>:radio</td>
+                <td>Seleciona os campos do tipo radio</td>
+              </tr>
+              <tr>
+                <td>:checkbox</td>
+                <td>Seleciona os campos do tipo checkbox</td>
+              </tr>
+              <tr>
+                <td>:file</td>
+                <td>Seleciona os campos do tipo file</td>
+              </tr>
+              <tr>
+                <td>image</td>
+                <td>Seleciona os campos do tipo image</td>
+              </tr>
+              <tr>
+                <td>:button</td>
+                <td>Seleciona os botões (do tipo button)</td>
+              </tr>
+              <tr>
+                <td>:submit</td>
+                <td>Seleciona o campo do tipo submit</td>
+              </tr>
+              <tr>
+                <td>:reset</td>
+                <td>Seleciona o campo do tipo reset</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-md-6">
+          <form>
+            <div class="form-group">
+              <label for="email">E-mail:</label>
+              <input type="text" id="email" class="form-control" placeholder="adriane@outlook.com">
+            </div>
+            <div class="form-group">
+              <label for="senha">Senha:</label>
+              <input type="password" id="senha" class="form-control" placeholder="@123#$">
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">Lembre-me
+              </label>
+            </div>
+            <button type="button" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessao-02">
+      <header>
+        <h2>Seletores Baseados em Estados</h2>
+      </header>
+
+      <div class="row">
+        <div class="col-md-6">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Seletor</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>:hidden</td>
+                <td>Seleciona os campos escondidos</td>
+              </tr>
+              <tr>
+                <td>:visible</td>
+                <td>Seleciona os campos visíveis</td>
+              </tr>
+              <tr>
+                <td>:enabled</td>
+                <td>Seleciona os campos habilitados</td>
+              </tr>
+              <tr>
+                <td>:disabled</td>
+                <td>Seleciona os campos desabilitados</td>
+              </tr>
+              <tr>
+                <td>:checked</td>
+                <td>Seleciona os campos marcados (radio, checkbox e option)</td>
+              </tr>
+              <tr>
+                <td>:selected</td>
+                <td>Seleciona os campos selecionados (option)</td>
+              </tr>
+              <tr>
+                <td>:animated</td>
+                <td>Seleciona os campos que estão sendo animados</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-md-6">
+          <form>
+            <div class="form-group">
+              <label for="produtos">Produtos:</label>
+              <select id="produtos" class="form-control">
+                <option value="1">Televisão</option>
+                <option value="2">Geladeira</option>
+                <option value="3">Celular</option>
+              </select>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessao-03">
+      <header>
+        <h2>Seletores Baseados em Conteúdo</h2>
+      </header>
+
+      <div class="row">
+        <div class="col-md-6">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Seletor</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>:empty</td>
+                <td>Seleciona elementos vazios (input, br, hr, img, ...)</td>
+              </tr>
+              <tr>
+                <td>:parent</td>
+                <td>Seleciona os elementos que possuem algum conteúdo</td>
+              </tr>
+              <tr>
+                <td>:has(E)</td>
+                <td>Seleciona os elementos que possuem um descendente E (elemento específico)</td>
+              </tr>
+              <tr>
+                <td>:contains(texto)</td>
+                <td>Seleciona os elementos que possuem o conteúdo texto (texto específico), mesmo que entre os descendentes</td>
+              </tr>
+              <tr>
+                <td>:header</td>
+                <td>Seleciona os elementos de título (h1, h2, ...). Não inclui o elemento header.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-md-6">
+          <header id="cabecalho">
+            <h1>Tim Berners-Lee</h2>
+              <blockquote>
+                A web não conecta máquinas, ela conecta pessoas. Berners-Lee, 2008.
+              </blockquote>
+          </header>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessao-04">
+      <header>
+        <h2>Seletores Baseados em Índices</h2>
+      </header>
+
+      <div class="row">
+        <div class="col-md-6">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Seletor</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>:first</td>
+                <td>Seleciona o elemento de índice 0</td>
+              </tr>
+              <tr>
+                <td>:last</td>
+                <td>Seleciona o elemento de maior índice</td>
+              </tr>
+              <tr>
+                <td>:odd</td>
+                <td>Seleciona os elementos de índice ímpar</td>
+              </tr>
+              <tr>
+                <td>:even</td>
+                <td>Seleciona os elementos de índice par</td>
+              </tr>
+              <tr>
+                <td>:eq(n)</td>
+                <td>Seleciona os elementos com índice n</td>
+              </tr>
+              <tr>
+                <td>:lt(n)</td>
+                <td>Seleciona os elementos com índice menor que n</td>
+              </tr>
+              <tr>
+                <td>:gt(n)</td>
+                <td>Seleciona os elementos com índice maior que n</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="col-md-6">
+          <ul id="contador">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

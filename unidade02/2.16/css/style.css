@@ -1,0 +1,105 @@
+body {
+  background-color: #424242;
+  color: #eff5fb;
+  font-family: 'Rajdhani Regular', sans-serif;
+  font-size: large;
+  font-weight: 100;
+  line-height: 1.8em;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Rajdhani Bold', sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  color: #fff;
+  background-color: #a901db;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.1em 2em;
+  text-transform: uppercase;
+}
+
+nav ul li a:hover {
+  color: #a901db;
+  background-color: #fff;
+}
+
+nav ul {
+  padding: 0px;
+  text-align: center;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 0px;
+}
+
+header p {
+  color: #a9bcf5;
+  font-family: 'LiuJian Regular';
+  font-size: larger;
+  font-style: italic;
+  margin-top: 0px;
+}
+
+header p q {
+  border-bottom-style: solid;
+  border-bottom-width: medium;
+  border-bottom-color: #a9bcf5;
+  padding-bottom: 0.2em;
+}
+
+figure {
+  margin: 0px auto;
+  width: 550px;
+}
+
+figure img {
+  width: 550px;
+  height: 350px;
+}
+
+figure figcaption {
+  text-align: center
+}
+
+main section p {
+  text-align: justify;
+}
+
+main section p {
+  text-indent: 2.5em;
+}
+
+a {
+  color: #a9bcf5;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ced8f6;
+}

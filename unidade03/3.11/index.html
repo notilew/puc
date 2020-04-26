@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <title>Classes</title>
+  <script type="text/javascript">
+    class Poligono {
+
+      constructor(largura, altura) {
+        this.largura = largura;
+        this.altura = altura;
+      }
+
+      get area() {
+        return this.largura * this.altura;
+      }
+
+    }
+
+    var quadrado = new Poligono(10, 5);
+
+    console.log(quadrado.area);
+
+    class Ponto {
+
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+      }
+
+      static calculaDistancia(a, b) {
+        const distanciaA = a.x - b.x;
+        const distanciaB = a.y - b.y;
+
+        return Math.sqrt(distanciaA * distanciaA + distanciaB * distanciaB).toFixed(2);
+      }
+
+      retornaDistancia() {
+        return `(${this.x}, ${this.y})`;
+      }
+
+    }
+    
+    class PontoColorido extends Ponto {
+      
+      constructor(x, y, cor) {
+        super(x, y); // referente a classe pai
+        this.cor = cor;
+      }
+      
+      retornaDistancia() {
+        return `${super.retornaDistancia()} em ${this.cor}`;
+      }
+    }
+
+    const p1 = new Ponto(5, 5);
+    const p2 = new Ponto(10, 10);
+    
+    console.log(Ponto.calculaDistancia(p1, p2));
+    console.log(p1.retornaDistancia());
+    console.log(p2.retornaDistancia());
+    
+    const p3 = new PontoColorido(15, 10, 'azul');
+    
+    console.log(p3.retornaDistancia());
+  </script>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>Classes</h1>
+      <p>
+        Conceito de Classes em JavaScript.
+      </p>
+    </header>
+  </main>
+</body></html>

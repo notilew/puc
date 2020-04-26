@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+  font-size: large;
+  font-weight: lighter;
+}
+
+h1 {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border: solid thin black;
+  padding: 5px;
+  width: 150px;
+}
+
+td:first-child {
+  text-align: center;
+}
+
+td:last-child {
+  text-align: right;
+}

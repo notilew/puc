@@ -1,0 +1,19 @@
+{
+  "produtos": [
+    {
+      "codigo": 1,
+      "descricao": "Torradeira",
+      "preco": 134.50
+    },
+    {
+      "codigo": 2,
+      "descricao": "Sanduicheira",
+      "preco": 120.30
+    },
+    {
+      "codigo": 3,
+      "descricao": "Refrigerador",
+      "preco": 1240.00
+    }
+  ]
+}

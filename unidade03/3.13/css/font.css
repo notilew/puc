@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Rajdhani Bold';
+  src: url('../fonts/rajdhani/rajdhani-bold.ttf');
+}
+
+@font-face {
+  font-family: 'Rajdhani Regular';
+  src: url('../fonts/rajdhani/rajdhani-regular.ttf');
+}
+@font-face {
+  font-family: 'LiuJian Regular';
+  src: url('../fonts/liujian/liujian-regular.ttf');
+}
