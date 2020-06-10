@@ -1,0 +1,14 @@
+{
+  "name": "cli",
+  "version": "1.0.0",
+  "description": "Aprendendo a utilizar comandos do terminal para interação com o código",
+  "main": "app.js",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
+}
