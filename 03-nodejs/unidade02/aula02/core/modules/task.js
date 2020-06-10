@@ -1,21 +1,49 @@
+const fs = require('fs');
+const path = require('path');
 const message = require('./message');
 
-const tasks = [];
+const directory = path.resolve('..', 'assets', 'files');
 
-const createTask = (name) => {
-    tasks.push({
-        name: name.toLowerCase(),
-        acomplished: false
-    });
+const createFile = () => {
+    if (!fs.existsSync(path.resolve(directory, 'tasks.txt')))
+        fs.writeFile(path.resolve('tasks.txt'), '', (error) => {
+            if (error) throw new Error(message.showDangerMessage(error.message));
 
-    message.showSuccessMessage('new task created successfully');
+            message.showInformationMessage('The tasks.txt file was created successfully');
+        });
 };
 
-const readTask = () => {};
+const writeFile = (task) => {
+    if (task) {
+        fs.writeFile(`${path}/tasks.txt`, task, (error) => {
+            if (error) throw new Error(message.showDangerMessage(error.message));
 
-const updateTask = () => {};
+            message.showSuccessMessage('new task created successfully')
+        });
+    }
+};
 
-const deleteTask = () => {};
+const createTask = (name) => {
+    if (name) {
+        const task = { name, acomplished: false };
+
+        createFile();
+
+        //writeFile(task);
+    }
+};
+
+const readTask = (key) => {
+    if (key) {
+        message.showSuccessMessage('listening a task...');
+    }
+
+    message.showSuccessMessage('listening all tasks')
+};
+
+const updateTask = () => { };
+
+const deleteTask = () => { };
 
 module.exports.create = createTask;
 module.exports.read = readTask;
