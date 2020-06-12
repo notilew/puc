@@ -2,11 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const message = require('./message');
 
-const directory = path.resolve('..', 'assets', 'files');
+const files = path.resolve('assets', 'files');
 
 const createFile = () => {
-    if (!fs.existsSync(path.resolve(directory, 'tasks.txt')))
-        fs.writeFile(path.resolve('tasks.txt'), '', (error) => {
+    if (!fs.existsSync(path.resolve(files, 'tasks.txt')))
+        fs.writeFile(path.resolve(files, 'tasks.txt'), '', (error) => {
             if (error) throw new Error(message.showDangerMessage(error.message));
 
             message.showInformationMessage('The tasks.txt file was created successfully');
@@ -15,7 +15,7 @@ const createFile = () => {
 
 const writeFile = (task) => {
     if (task) {
-        fs.writeFile(`${path}/tasks.txt`, task, (error) => {
+        fs.writeFile(path.resolve(files, 'tasks.txt'), `${task.name} - ${task.acomplished}`, (error) => {
             if (error) throw new Error(message.showDangerMessage(error.message));
 
             message.showSuccessMessage('new task created successfully')
@@ -29,7 +29,7 @@ const createTask = (name) => {
 
         createFile();
 
-        //writeFile(task);
+        writeFile(task);
     }
 };
 

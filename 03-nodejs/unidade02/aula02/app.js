@@ -27,4 +27,4 @@ yargs.command({
     handler: task.delete
 });
 
-console.log(yargs.argv);
+yargs.parse();
