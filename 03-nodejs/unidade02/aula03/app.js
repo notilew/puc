@@ -30,10 +30,8 @@ yargs.command({
             description: argv.description,
             acomplished: false
         }
-
-        const taskJSON = JSON.stringify(task);
-
-        fs.appendFileSync('src/assets/files/tasks.json', taskJSON);
+console.log(task);
+        fs.writeFileSync('/tasks.txt', JSON.stringify(task));
     }
 });
 
