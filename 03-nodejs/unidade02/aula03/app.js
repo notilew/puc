@@ -23,7 +23,7 @@ yargs.command({
             demandOption: false
         }
     },
-    handler: function (argv) {
+    handler: (argv) => {
         task.createTask(argv);
     }
 });
@@ -38,7 +38,7 @@ yargs.command({
             demandaOption: false
         }
     },
-    handler: function (argv) {
+    handler: (argv) => {
         task.readTask(argv.name);
     }
 });
@@ -63,7 +63,7 @@ yargs.command({
             demandOption: false
         }
     },
-    handler: function (argv) {
+    handler: (argv) => {
         task.updateTask(argv.name, argv.description, argv.acomplished);
     }
 });
@@ -78,7 +78,7 @@ yargs.command({
             demandOption: true
         },
     },
-    handler: function (argv) {
+    handler: (argv) => {
         task.deleteTask(argv.name);
     }
 });
