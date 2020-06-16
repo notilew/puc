@@ -1,6 +1,5 @@
-const fs = require('fs');
-const chalk = require('chalk');
 const yargs = require('yargs');
+const task = require('./src/core/task');
 
 yargs.version('1.0.0');
 
@@ -24,36 +23,64 @@ yargs.command({
             demandOption: false
         }
     },
-    handler: function(argv) {
-        const task = {
-            name: argv.name,
-            description: argv.description,
-            acomplished: false
-        }
-console.log(task);
-        fs.writeFileSync('/tasks.txt', JSON.stringify(task));
+    handler: function (argv) {
+        task.createTask(argv);
     }
 });
 
-/* yargs.command({
+yargs.command({
     command: 'read',
     describe: 'lista todas as tarefas da lista de tarefas',
-    builder: { },
-    handler:
+    builder: {
+        id: {
+            describe: 'id da tarefa',
+            type: 'number',
+            demandaOption: false
+        }
+    },
+    handler: function (argv) {
+        task.readTask(argv.name);
+    }
 });
 
 yargs.command({
     command: 'update',
     describe: 'atualiza uma tarefa da lista de tarefas',
-    builder: { },
-    handler:
+    builder: {
+        name: {
+            describe: 'nome da tarefa',
+            type: 'string',
+            demandOption: true
+        },
+        description: {
+            descrive: 'descrição da tarefa',
+            type: 'string',
+            demandOption: false
+        },
+        acomplished: {
+            describe: 'status da tarefa',
+            type: 'boolean',
+            demandOption: false
+        }
+    },
+    handler: function (argv) {
+        task.updateTask(argv.name, argv.description, argv.acomplished);
+    }
 });
 
 yargs.command({
     command: 'delete',
     describe: 'deleta uma tarefa da lista de tarefas',
-    builder: { },
-    handler:
-}); */
+    builder: {
+        name: {
+            describe: 'nome da tarefa',
+            type: 'string',
+            demandOption: true
+        },
+    },
+    handler: function (argv) {
+        task.deleteTask(argv.name);
+    }
+});
 
 yargs.parse();
