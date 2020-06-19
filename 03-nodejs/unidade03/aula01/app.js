@@ -13,3 +13,37 @@ request(url, (error, response) => {
         console.log(`price: ${data.price}`);
     });
 });
+
+
+/**
+ * Simulando função com um callback
+ */
+const getPrice = (symbol, callback) => {
+    setTimeout(() => {
+        const data = {
+            symbol,
+            price: 16.50
+        };
+
+        callback(data);
+    }, 5000);
+};
+
+const data = getPrice('petr4', (data) => {
+    console.log(data);
+});
+
+/**
+ * Desafio
+ */
+const sum = (num01, num02, callback) => {
+    setTimeout(() => {
+        const result = num01 + num02;
+
+        callback(result);
+    }, 10000);
+};
+
+sum(10, 25, (result) => {
+    console.log(`O resultado da soma é: ${result}`);
+});
