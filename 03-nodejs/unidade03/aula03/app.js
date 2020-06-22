@@ -7,16 +7,18 @@ yargs.command({
     command: 'search',
     describe: 'busca informações do ativo no world trading data',
     builder: {
-        code: {
+        symbol: {
             describe: 'código do ativo na bolsa de valores',
             type: 'string',
             demandOption: true
         }
     },
     handler: (args) => {
-        const { code } = args;
+        const { symbol } = args;
 
-        quote(code);
+        quote(symbol, (data) => {
+            console.log(data);
+        });
     }
 });
 
