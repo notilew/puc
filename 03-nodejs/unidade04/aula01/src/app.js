@@ -1,5 +1,6 @@
 const path = require('path');
 const hbs = require('hbs');
+const search = require('./core/quote');
 const express = require('express');
 
 const app = express();
@@ -30,8 +31,8 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
  * definindo rota para acessar dinamicamente a index.hbs
  */
 app.get('/', (request, response) => {
-    response.render('index.hbs', {
-        title: 'bem-vindo a página principal',
+    return response.render('index', {
+        title: 'welcome to the home page',
         author: 'wellington felix'
     });
 });
@@ -40,8 +41,8 @@ app.get('/', (request, response) => {
  * definindo rota para acessar dinamicamente a about.hbs
  */
 app.get('/about', (request, response) => {
-    response.render('about.hbs', {
-        title: 'bem-vindo a página de sobre',
+    return response.render('about', {
+        title: 'welcome to the about page',
         author: 'wellington felix'
     });
 });
@@ -50,27 +51,36 @@ app.get('/about', (request, response) => {
  * definindo rota para acessar dinamicamente a help.hbs
  */
 app.get('/help', (request, response) => {
-    response.render('help.hbs', {
-        title: 'bem-vindo a página de ajuda',
+    return response.render('help', {
+        title: 'welcome to the help page',
         author: 'wellington felix'
     });
 });
 
-app.get('/cotacoes', (request, response) => {
-    const quotes = new Array();
-    const quote = {
-        symbol: 'egie3',
-        priceOpen: 55.50,
-        dayHigh: 56.10,
-        dayLow: 54.25
-    }
+/**
+ * definindo rota para acessar dinamicamente a página de cotação
+ */
+app.get('/quote', (request, response) => {
+    const code = request.query.symbol;
 
-    quotes.push(quote);
-    quotes.push(quote);
+    search(code, (quote, error) => {
+        if (error) return response.status(400).json({ message: error.message });
 
-    response.status(200).json(quotes);
+        return response.status(200).send(quote);
+    });
 });
 
-app.listen(3000, () => {
-    console.log('Servidor Online na Porta 3000!');
+/**
+ * definindo rota para acessar dinamicamente a página 404
+ */
+app.get('*', (request, response) => {
+    return response.status(404).render('404', {
+        title: 'Erro 404',
+        message: 'Page Not Found!',
+        author: 'wellington felix'
+    });
+});
+
+app.listen(8080, () => {
+    console.log('Servidor Online na Porta 8080!');
 });

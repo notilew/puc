@@ -1,21 +1,20 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Página de Sobre</title>
+    <title>About</title>
+    <link rel="icon" href="./img/icon.png">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/main.js"></script>
 </head>
 
 <body>
-    <main>
+    <div class="main-content">
         {{> header }}
-        <p>
-            <img src="./img/unknown-user.jpg" alt="unknown user" width="250" height="250">
-        </p>
-        {{> footer }}
-    </main>
+        <img class="portrait" src="./img/unknown-user.jpg" alt="unknown user" width="250" height="250">
+    </div>
+    {{> footer }}
 </body>
 
 </html>
