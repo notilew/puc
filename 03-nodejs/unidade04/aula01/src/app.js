@@ -3,6 +3,8 @@ const hbs = require('hbs');
 const search = require('./core/quote');
 const express = require('express');
 
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 
 /**
@@ -81,6 +83,6 @@ app.get('*', (request, response) => {
     });
 });
 
-app.listen(8080, () => {
-    console.log('Servidor Online na Porta 8080!');
+app.listen(PORT, () => {
+    console.log(`Servidor Online na Porta ${PORT}!`);
 });

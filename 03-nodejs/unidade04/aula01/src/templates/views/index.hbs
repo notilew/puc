@@ -12,7 +12,32 @@
 <body>
     <div class="main-content">
         {{> header }}
+
+        <p>
+            Enter the asset code to view the quote.
+        </p>
+
+        <form>
+            <fieldset>
+                <legend>Quote</legend>
+                <div>
+                    <label for="search"></label>
+                    <input type="search" name="search" id="search" size="30" maxlength="10" placeholder="Asset Code">
+                    <button>Search</button>
+                </div>
+            </fieldset>
+        </form>
+
+        <h3></h3>
+
+        <p id="symbol"></p>
+        <p id="description"></p>
+        <p id="price"></p>
+        <p id="price-open"></p>
+        <p id="day-high"></p>
+        <p id="day-low"></p>
     </div>
+
     {{> footer }}
 </body>
 
