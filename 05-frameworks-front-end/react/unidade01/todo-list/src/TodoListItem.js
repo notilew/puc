@@ -4,10 +4,15 @@ import PropTypes from 'prop-types';
 export function TodoListItem(props) {
     return (
         <li>
-            <strong>{props.name}</strong> - {props.status}
-            <button onClick={() => props.onShowTaskName(props.name)}>
-                Show Task Name
-            </button>
+            <input
+                type="checkbox"
+                onChange={(event) => props.onToggleCompleted(props.id, event)}
+            />
+            <strong
+                style={{ textDecoration: props.status === 'completed' ? 'line-through' : 'none' }}
+            >
+                {props.name}
+            </strong> - {props.status}
         </li>
     );
 }
@@ -16,5 +21,5 @@ TodoListItem.propTypes = {
     id: PropTypes.number,
     name: PropTypes.string,
     status: PropTypes.string,
-    onShowTaskName: PropTypes.func
+    onToggleCompleted: PropTypes.func
 };
