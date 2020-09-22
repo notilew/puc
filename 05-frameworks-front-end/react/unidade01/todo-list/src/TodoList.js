@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
+import ProtoTypes from 'prop-types';
 import { TodoListItem } from './TodoListItem';
 
-export class TodoList extends React.Component {
+export class TodoList extends Component {
     state = {
+        title: '',
         items: [{
             id: 1,
             name: 'Task 1',
@@ -18,6 +20,10 @@ export class TodoList extends React.Component {
         }]
     };
 
+    componentDidMount() {
+        this.setState({ title: 'My To Do List'});
+    }
+
     render() {
         const handleOnToggleCompleted = (taskId, event) => {
             this.setState({
@@ -32,12 +38,22 @@ export class TodoList extends React.Component {
         };
 
         return (
-            <ul>
-                {this.state.items.map(item => (
-                    <TodoListItem key={item.id} onToggleCompleted={handleOnToggleCompleted} {...item} />)
-                )}
-            </ul>
+            <div>
+                <h2>{this.state.title}</h2>
+                <ul>
+                    {this.state.items.map(item => (
+                        <TodoListItem key={item.id} onToggleCompleted={handleOnToggleCompleted} {...item} />)
+                    )}
+                </ul>
+            </div>
         );
     }
 
 }
+
+TodoList.propTypes = {
+    title: ProtoTypes.string,
+    items: ProtoTypes.array,
+    componentDidMount: ProtoTypes.func,
+    render: ProtoTypes.func
+};
