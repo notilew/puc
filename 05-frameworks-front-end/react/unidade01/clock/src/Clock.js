@@ -8,7 +8,6 @@ class Clock extends Component {
 
     componentDidMount() {
         this.timerId = setInterval(() => {
-            console.log('update time')
             this.setState({ date: new Date() });
         }, 1000);
     }

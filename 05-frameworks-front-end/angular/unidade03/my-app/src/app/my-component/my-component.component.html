@@ -1,0 +1,20 @@
+<p>
+    {{ customInput }}
+</p>
+
+<ul>
+    <li *ngFor="let item of items">
+        <span *ngIf="item !== 'item 2'" [style.background]="item === 'item 3' ? 'blue' : 'green'"
+            [ngClass]="item === 'item 3' ? 'color-white' : ''">
+            {{ item }}
+        </span>
+    </li>
+</ul>
+
+<p>
+    <input type="text" [(ngModel)]="customInput">
+</p>
+
+<button (click)="handleCustomEvent()">
+    Send Output
+</button>

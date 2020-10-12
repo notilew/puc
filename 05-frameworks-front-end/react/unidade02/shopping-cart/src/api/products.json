@@ -1,0 +1,46 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Drone Phantom",
+            "image": "drone-phantom.jpg",
+            "price": 8500.00,
+            "description": "Melhor drone já construído"
+        },
+        {
+            "id": 2,
+            "name": "Câmera Go Pro",
+            "image": "go-pro.jpg",
+            "price": 4500.00,
+            "description": "Câmera a prova d'água e com uma resolução de 5000x5000"
+        },
+        {
+            "id": 3,
+            "name": "Iphone XS",
+            "image": "iphone-xs.jpg",
+            "price": 3000.00,
+            "description": "Melhor design e preço para a melhor marca de celulares do mundo"
+        },
+        {
+            "id": 4,
+            "name": "Kindle",
+            "image": "kindle.jpg",
+            "price": 500.00,
+            "description": "Baixe seus livros favoritos e leia onde quiser utilizando o novo Kindle"
+        },
+        {
+            "id": 5,
+            "name": "Playstation 4",
+            "image": "playstation4.jpg",
+            "price": 4000.00,
+            "description": "Console com 250GB de HD e 2 jogos"
+        },
+        {
+            "id": 6,
+            "name": "Xbox One",
+            "image": "xbox-one.jpg",
+            "price": 4500.00,
+            "description": "Console com 200GB de HD e 1 jogo"
+        }
+    ]
+}
